@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MicroChain | Micro-Finance </title>
 
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
 
@@ -25,7 +32,139 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="hero-unit">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">&nbsp;&nbsp;&nbsp; Micro Chain</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="">Services</a></li>
+          <li><a href="">Login</a></li>
+          <li><a href=""></a></li>
+        </ul>
+        </div>
+    </nav>
+
+<center><h4>Low Interest Micro-Loans for Self-Financing Groups</h4></center>
+
+  <div class="row">
+    <div class="col s12 m6">
+      <div class="card ">
+        <div class="card-content">
+          <span class="card-title">Add Init Members</span>
+          <input placeholder="Aadhar ID"  id='Uaadh' value='' type="text" class="validate">
+          <label for="Uaadh">Aadhar ID </label>
+          <input placeholder="Initial Amount :  " id='init_amount' value='' type="text" class="validate">
+          <label for="usrAddr">Initial Amount </label>
+        </div>
+        <div class="card-action">
+          <a id ='addInit' onclick='AddInit()'  style="cursor:pointer;">Add Init Member</a>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m6">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">Member Validation</span>
+          <input placeholder="Aadhar ID"  id='aadId' value='' type="text" class="validate">
+          <label for="Uaadh">Aadhar ID </label>
+          <input placeholder="User Address : "  id='usrAddr' value='0x00' type="text" class="validate">
+          <label for="usrAddr">User Address </label>
+        </div>
+        <div class="card-action">
+          <a id ='adval' onclick='aadhvalidation()' style="cursor:pointer;">Validate Member</a>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="col s12 m6">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">Deposit to Pool</span>
+          <input placeholder="Deposition Amount : "  id='poolDep' value='' type="text" class="validate">
+          <label for="poolDep">Deposition Amount</label>
+        </div>
+        <div class="card-action">
+          <a id ='depol' onclick='PolDep()' style="cursor:pointer;">Deposit</a>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m6">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">Request Loan</span>
+          <input placeholder="Amount Requested :"  id='AmtReq' value='' type="text" class="validate">
+          <label for="Uaadh">Amount Requested</label>
+        </div>
+        <div class="card-action">
+          <a id ='lonreq' onclick='LoanReq()' style="cursor:pointer;">Request Loan</a>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="col s12 m6">
+      <br>
+      <hr>
+      <br>
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">Distribute Loan</span>
+        </div>
+        <div class="card-action">
+          <a id ='disloan' onclick='disLoan()' style="cursor:pointer;">Distribute Loan</a>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m6">
+      <br>
+      <hr>
+      <br>
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">Get Pool Money</span>
+          <p id ='getPoolMoney'></p>
+        </div>
+        <div class="card-action">
+          <a onclick='getPoolMoney()' style="cursor:pointer;">Get Pool Money</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col s12 m6">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">Get My Money</span>
+          <p id ='getMyMoney'></p>
+        </div>
+        <div class="card-action">
+          <a  onclick='getMyMoney()' style="cursor:pointer;">Get My Balance</a>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m6">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">List All References</span>
+          <p id ='ref1'></p>
+          <p id ='ref2'></p>
+          <p id ='ref3'></p>
+          <p id ='ref4'></p>
+        </div>
+        <div class="card-action">
+          <a onclick='getRefs()' style="cursor:pointer;">List References</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+        
+<!--     <div class="hero-unit">
         <h1><center>MicroChain</center></h1>
         <h2><center>Low Interest Micro-Loans for <br>Self-Financing Groups</center></h2>
     <div class="block1">
@@ -63,8 +202,6 @@
           <span><center><button onclick='getPoolMoney()'>Get Pool Money</button></center></span>
     </div>
 
-
-
     <div class="block2">
           <h4><center>Get My Money</center></h4>
           <p id ='getMyMoney'></p>
@@ -79,7 +216,33 @@
           <span><center><button onclick='getRefs()'>List References</button></center></span>
     </div>
 
-    </div>
+    </div> -->
+
+    <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">MicroChain | Micro-Finance</h5>
+                <p class="grey-text text-lighten-4">Footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2019 Copyright
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+    </footer>
 
 
     <!-- build:js scripts/vendor.js -->
